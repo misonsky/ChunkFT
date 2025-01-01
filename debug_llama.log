@@ -1,0 +1,569 @@
+[2024-08-18 18:25:33,988] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/mounts/work/lyk/anaconda3/envs/torch2/lib/python3.8/site-packages/transformers/deepspeed.py:23: FutureWarning: transformers.deepspeed module is deprecated and will be removed in a future version. Please import deepspeed modules directly from transformers.integrations
+  warnings.warn(
+[2024-08-18 18:25:35,237] [INFO] [comm.py:637:init_distributed] cdb=None
+[2024-08-18 18:25:35,237] [INFO] [comm.py:668:init_distributed] Initializing TorchBackend in DeepSpeed with backend nccl
+Using the `WANDB_DISABLED` environment variable is deprecated and will be removed in v5. Use the --report_to flag to control the integrations used for logging result (for instance --report_to none).
+08/18/2024 18:25:35 - WARNING - __main__ - Process rank: 0, device: cuda:0, n_gpu: 1, distributed training: True, 16-bits training: True
+08/18/2024 18:25:35 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_persistent_workers=False,
+dataloader_pin_memory=True,
+ddp_backend=None,
+ddp_broadcast_buffers=None,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+ddp_timeout=1800,
+debug=[],
+deepspeed=dsconfig/zero0_config.json,
+disable_tqdm=False,
+dispatch_batches=None,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=None,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=epoch,
+fp16=True,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_config={'min_num_params': 0, 'xla': False, 'xla_fsdp_grad_ckpt': False},
+fsdp_min_num_params=0,
+fsdp_transformer_layer_cls_to_wrap=None,
+full_determinism=False,
+generation_config=None,
+generation_max_length=None,
+generation_num_beams=None,
+gradient_accumulation_steps=1,
+gradient_checkpointing=True,
+gradient_checkpointing_kwargs=None,
+greater_is_better=False,
+group_by_length=True,
+half_precision_backend=auto,
+hub_always_push=False,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=every_save,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+include_num_input_tokens_seen=False,
+include_tokens_per_second=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=5e-05,
+length_column_name=length,
+load_best_model_at_end=True,
+local_rank=0,
+log_level=passive,
+log_level_replica=warning,
+log_on_each_node=True,
+logging_dir=outputs/e2e_opt/log,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=10,
+logging_strategy=steps,
+lr_scheduler_kwargs={},
+lr_scheduler_type=linear,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=loss,
+model_max_length=512,
+mp_parameters=,
+neftune_noise_alpha=None,
+no_cuda=False,
+num_train_epochs=5.0,
+optim=sgd,
+optim_args=None,
+output_dir=outputs/e2e_opt/model,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=16,
+predict_with_generate=False,
+prediction_loss_only=False,
+pretraining_tp=1,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=outputs/e2e_opt/model,
+save_on_each_node=False,
+save_only_model=False,
+save_safetensors=True,
+save_steps=500,
+save_strategy=epoch,
+save_total_limit=None,
+seed=0,
+skip_memory_metrics=True,
+sortish_sampler=False,
+split_batches=False,
+tf32=None,
+torch_compile=False,
+torch_compile_backend=None,
+torch_compile_mode=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_cpu=False,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+use_mps_device=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+)
+/mounts/work/lyk/anaconda3/envs/torch2/lib/python3.8/site-packages/datasets/load.py:1429: FutureWarning: The repository for e2e_nlg contains custom code which must be executed to correctly load the dataset. You can inspect the repository content at https://hf.co/datasets/e2e_nlg
+You can avoid this message in future by passing the argument `trust_remote_code=True`.
+Passing `trust_remote_code=True` will be mandatory to load this dataset from the next major release of `datasets`.
+  warnings.warn(
+Loading Dataset Infos from /mounts/work/lyk/.cache/modules/datasets_modules/datasets/e2e_nlg/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430
+08/18/2024 18:25:38 - INFO - datasets.info - Loading Dataset Infos from /mounts/work/lyk/.cache/modules/datasets_modules/datasets/e2e_nlg/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430
+Overwrite dataset info from restored data version if exists.
+08/18/2024 18:25:38 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430
+08/18/2024 18:25:38 - INFO - datasets.info - Loading Dataset info from /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430
+Found cached dataset e2e_nlg (/mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430)
+08/18/2024 18:25:38 - INFO - datasets.builder - Found cached dataset e2e_nlg (/mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430)
+Loading Dataset info from /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430
+08/18/2024 18:25:38 - INFO - datasets.info - Loading Dataset info from /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430
+[INFO|configuration_utils.py:737] 2024-08-18 18:25:38,423 >> loading configuration file /mounts/work/lyk/hierFT/llama2-7b/config.json
+[INFO|configuration_utils.py:802] 2024-08-18 18:25:38,425 >> Model config LlamaConfig {
+  "_name_or_path": "/mounts/work/lyk/hierFT/llama2-7b",
+  "architectures": [
+    "LlamaForCausalLM"
+  ],
+  "attention_bias": false,
+  "attention_dropout": 0.0,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "hidden_act": "silu",
+  "hidden_size": 4096,
+  "initializer_range": 0.02,
+  "intermediate_size": 11008,
+  "max_position_embeddings": 4096,
+  "model_type": "llama",
+  "num_attention_heads": 32,
+  "num_hidden_layers": 32,
+  "num_key_value_heads": 32,
+  "pretraining_tp": 1,
+  "rms_norm_eps": 1e-05,
+  "rope_scaling": null,
+  "rope_theta": 10000.0,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.36.2",
+  "use_cache": true,
+  "vocab_size": 32000
+}
+
+[INFO|tokenization_utils_base.py:2024] 2024-08-18 18:25:38,437 >> loading file tokenizer.model
+[INFO|tokenization_utils_base.py:2024] 2024-08-18 18:25:38,437 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2024] 2024-08-18 18:25:38,437 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2024] 2024-08-18 18:25:38,437 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2024] 2024-08-18 18:25:38,437 >> loading file tokenizer_config.json
+[INFO|modeling_utils.py:3341] 2024-08-18 18:25:38,728 >> loading weights file /mounts/work/lyk/hierFT/llama2-7b/model.safetensors.index.json
+[INFO|configuration_utils.py:826] 2024-08-18 18:25:38,730 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "eos_token_id": 2
+}
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.58s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.60s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.75s/it]
+[INFO|modeling_utils.py:4185] 2024-08-18 18:25:42,588 >> All model checkpoint weights were used when initializing LlamaForCausalLM.
+
+[INFO|modeling_utils.py:4193] 2024-08-18 18:25:42,588 >> All the weights of LlamaForCausalLM were initialized from the model checkpoint at /mounts/work/lyk/hierFT/llama2-7b.
+If your task is similar to the task the model of the checkpoint was trained on, you can already use LlamaForCausalLM for predictions without further training.
+[INFO|configuration_utils.py:779] 2024-08-18 18:25:42,591 >> loading configuration file /mounts/work/lyk/hierFT/llama2-7b/generation_config.json
+[INFO|configuration_utils.py:826] 2024-08-18 18:25:42,592 >> Generate config GenerationConfig {
+  "bos_token_id": 1,
+  "do_sample": true,
+  "eos_token_id": 2,
+  "max_length": 4096,
+  "pad_token_id": 0,
+  "temperature": 0.6,
+  "top_p": 0.9
+}
+
+Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-3c479275daa48a3a.arrow
+08/18/2024 18:25:42 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-3c479275daa48a3a.arrow
+Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-31d40f8145f21fae.arrow
+08/18/2024 18:25:42 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-31d40f8145f21fae.arrow
+Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-4371573d0388813a.arrow
+08/18/2024 18:25:42 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-4371573d0388813a.arrow
+Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-9136ffa0b895e1c5.arrow
+08/18/2024 18:25:42 - INFO - datasets.arrow_dataset - Loading cached processed dataset at /mounts/work/lyk/.cache/datasets/e2e_nlg/default/0.0.0/bfeceb720929c2705bd227d1cfe5eaaab102a0bdac10dad618dac1e00c737430/cache-9136ffa0b895e1c5.arrow
+[2024-08-18 18:25:42,644] [INFO] [replace_operation.py:365:replace_backward] ...[deepspeed] mixed precision adapted for HiFT are running......
+[INFO|trainer.py:568] 2024-08-18 18:25:42,736 >> Using auto half precision backend
+08/18/2024 18:25:42 - WARNING - chnk.registerCallBack - For LLaMA the HiTaskType should be SEQ_CLS , CAUSAL_LM
+[INFO|trainer.py:712] 2024-08-18 18:25:42,841 >> The following columns in the training set don't have a corresponding argument in `LlamaForCausalLM.forward` and have been ignored: meaning_representation, human_reference. If meaning_representation, human_reference are not expected by `LlamaForCausalLM.forward`,  you can safely ignore this message.
+ADAMW_HF adamw_hf
+ADAMW_TORCH adamw_torch
+ADAMW_TORCH_FUSED adamw_torch_fused
+ADAMW_TORCH_XLA adamw_torch_xla
+ADAMW_TORCH_NPU_FUSED adamw_torch_npu_fused
+ADAMW_APEX_FUSED adamw_apex_fused
+ADAFACTOR adafactor
+ADAMW_ANYPRECISION adamw_anyprecision
+SGD sgd
+ADAGRAD adagrad
+ADAMW_BNB adamw_bnb_8bit
+ADAMW_8BIT adamw_8bit
+LION_8BIT lion_8bit
+LION lion_32bit
+PAGED_ADAMW paged_adamw_32bit
+PAGED_ADAMW_8BIT paged_adamw_8bit
+PAGED_LION paged_lion_32bit
+PAGED_LION_8BIT paged_lion_8bit
+RMSPROP rmsprop
+ADAM adam
+ADAM_32BIT adam_32bit
+ADAM_8BIT adam_8bit
+PAGED_ADAM paged_adam
+PAGED_ADAM_32BIT paged_adam_32bit
+PAGED_ADAM_8BIT paged_adam_8bit
+LAMB lamb
+LAMB_32BIT lamb_32bit
+LAMB_8BIT lamb_8bit
+LARS lars
+LARS_32BIT lars_32bit
+LARS_8BIT lars_8bit
+BRMSPROP rmsprop_bit
+BRMSPROP_32BIT rmsprop_32bit
+BRMSPROP_8BIT rmsprop_8bit
+BSGD sgd_bit
+BSGD_32BIT sgd_32bit
+BSGD_8BIT sgd_8bit
+08/18/2024 18:26:00 - INFO - chnk.trainer - the optimizer you are using: <class 'chnk.optimizers.sgd.SGD'>
+[2024-08-18 18:26:00,467] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed info: version=0.12.6, git-hash=unknown, git-branch=unknown
+[2024-08-18 18:26:12,402] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2024-08-18 18:26:12,404] [INFO] [logging.py:96:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[2024-08-18 18:26:12,404] [INFO] [logging.py:96:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[2024-08-18 18:26:12,413] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Basic Optimizer = SGD
+[2024-08-18 18:26:12,413] [INFO] [logging.py:96:log_dist] [Rank 0] Creating fp16 unfused optimizer with dynamic loss scale
+[2024-08-18 18:26:12,414] [INFO] [replace_operation.py:122:__init__] Fused Lamb Legacy : False 
+[2024-08-18 18:26:12,414] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed Final Optimizer = SGD
+[2024-08-18 18:26:12,414] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed using client LR scheduler
+[2024-08-18 18:26:12,414] [INFO] [logging.py:96:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+[2024-08-18 18:26:12,414] [INFO] [logging.py:96:log_dist] [Rank 0] step=0, skipped=0, lr=[5e-05, 5e-05], mom=[0, 0]
+[2024-08-18 18:26:12,415] [INFO] [config.py:984:print] DeepSpeedEngine configuration:
+[2024-08-18 18:26:12,416] [INFO] [config.py:988:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2024-08-18 18:26:12,416] [INFO] [config.py:988:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True}
+[2024-08-18 18:26:12,416] [INFO] [config.py:988:print]   amp_enabled .................. False
+[2024-08-18 18:26:12,416] [INFO] [config.py:988:print]   amp_params ................... False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   bfloat16_enabled ............. False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   checkpoint_parallel_write_pipeline  False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   checkpoint_tag_validation_enabled  True
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   checkpoint_tag_validation_fail  False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7f36973fb3d0>
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   communication_data_type ...... None
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   curriculum_enabled_legacy .... False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   curriculum_params_legacy ..... False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   data_efficiency_enabled ...... False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   dataloader_drop_last ......... False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   disable_allgather ............ False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   dump_state ................... False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   dynamic_loss_scale_args ...... None
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   eigenvalue_enabled ........... False
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   eigenvalue_gas_boundary_resolution  1
+[2024-08-18 18:26:12,417] [INFO] [config.py:988:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   eigenvalue_layer_num ......... 0
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   eigenvalue_max_iter .......... 100
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   eigenvalue_stability ......... 1e-06
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   eigenvalue_tol ............... 0.01
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   eigenvalue_verbose ........... False
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   elasticity_enabled ........... False
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   fp16_auto_cast ............... False
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   fp16_enabled ................. True
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   fp16_master_weights_and_gradients  False
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   global_rank .................. 0
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   grad_accum_dtype ............. None
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   gradient_accumulation_steps .. 1
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   gradient_clipping ............ 1.0
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   gradient_predivide_factor .... 1.0
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   graph_harvesting ............. False
+[2024-08-18 18:26:12,418] [INFO] [config.py:988:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   initial_dynamic_scale ........ 65536
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   load_universal_checkpoint .... False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   loss_scale ................... 0
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   memory_breakdown ............. False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   mics_hierarchial_params_gather  False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   mics_shard_size .............. -1
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') enabled=False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   optimizer_legacy_fusion ...... False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   optimizer_name ............... None
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   optimizer_params ............. None
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   pld_enabled .................. False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   pld_params ................... False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   prescale_gradients ........... False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   scheduler_name ............... None
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   scheduler_params ............. None
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   seq_parallel_communication_data_type  torch.float32
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   sparse_attention ............. None
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   sparse_gradients_enabled ..... False
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   steps_per_print .............. inf
+[2024-08-18 18:26:12,419] [INFO] [config.py:988:print]   train_batch_size ............. 16
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   train_micro_batch_size_per_gpu  16
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   use_data_before_expert_parallel_  False
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   use_node_local_storage ....... False
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   wall_clock_breakdown ......... False
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   weight_quantization_config ... None
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   world_size ................... 1
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   zero_allow_untested_optimizer  True
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   zero_config .................. stage=0 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500,000,000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500,000,000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=None offload_optimizer=None sub_group_size=1,000,000,000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50,000,000 param_persistence_threshold=100,000 model_persistence_threshold=sys.maxsize max_live_parameters=1,000,000,000 max_reuse_distance=1,000,000,000 gather_16bit_weights_on_model_save=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   zero_enabled ................. False
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   zero_force_ds_cpu_optimizer .. False
+[2024-08-18 18:26:12,420] [INFO] [config.py:988:print]   zero_optimization_stage ...... 0
+[2024-08-18 18:26:12,420] [INFO] [config.py:974:print_user_config]   json = {
+    "bf16": {
+        "enabled": false
+    }, 
+    "fp16": {
+        "enabled": true
+    }, 
+    "zero_optimization": {
+        "stage": 0
+    }, 
+    "lr_scheduler": {
+        "update_on_step": false
+    }, 
+    "gradient_accumulation_steps": 1, 
+    "steps_per_print": inf, 
+    "gradient_clipping": 1.0, 
+    "train_micro_batch_size_per_gpu": 16, 
+    "wall_clock_breakdown": false, 
+    "zero_force_ds_cpu_optimizer": false, 
+    "zero_allow_untested_optimizer": true
+}
+08/18/2024 18:26:12 - INFO - chnk.trainer - ***** Running training *****
+08/18/2024 18:26:12 - INFO - chnk.trainer -   Num examples = 42,061
+08/18/2024 18:26:12 - INFO - chnk.trainer -   Num Epochs = 5
+08/18/2024 18:26:12 - INFO - chnk.trainer -   Instantaneous batch size per device = 16
+08/18/2024 18:26:12 - INFO - chnk.trainer -   Total train batch size (w. parallel, distributed & accumulation) = 16
+08/18/2024 18:26:12 - INFO - chnk.trainer -   Gradient Accumulation steps = 1
+08/18/2024 18:26:12 - INFO - chnk.trainer -   Total optimization steps = 13,145
+08/18/2024 18:26:12 - INFO - chnk.trainer -   Number of trainable parameters = 6,738,415,616
+  0%|          | 0/13145 [00:00<?, ?it/s][WARNING|logging.py:314] 2024-08-18 18:26:12,443 >> You're using a LlamaTokenizerFast tokenizer. Please note that with a fast tokenizer, using the `__call__` method is faster than using a method to encode the text followed by a call to the `pad` method to get a padded encoding.
+Trainable parameters 6738.415616 peak_meory 12.613976001739502 utilization 6
+08/18/2024 18:26:12 - WARNING - models.modeling_llama - `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/nfs/datx/lyk/ChunkFT/chnk/utils/layer.py:572: UserWarning: torch.utils.checkpoint: please pass in use_reentrant=True or use_reentrant=False explicitly. The default value of use_reentrant will be updated to be False in the future. To maintain current behavior, pass use_reentrant=True. It is recommended that you use use_reentrant=False. Refer to docs for more details on the differences between the two variants.
+  warnings.warn(
+/nfs/datx/lyk/ChunkFT/chnk/optimizers/checkoverflow.py:274: UserWarning: The torch.cuda.*DtypeTensor constructors are no longer recommended. It's best to use methods such as torch.tensor(data, dtype=*, device='cuda') to create tensors. (Triggered internally at ../torch/csrc/tensor/python_tensor.cpp:83.)
+  overflow_gpu = get_accelerator().ByteTensor([overflow])
+[2024-08-18 18:26:18,664] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 0
+[2024-08-18 18:26:18,664] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 65536.0 to 32768.0
+[2024-08-18 18:26:18,665] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 65536.0, reducing to 32768.0
+  0%|          | 1/13145 [00:07<26:29:19,  7.25s/it]Trainable parameters 6738.415616 peak_meory 28.485461711883545 utilization 8
+[2024-08-18 18:26:25,165] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 1
+[2024-08-18 18:26:25,165] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 32768.0 to 16384.0
+[2024-08-18 18:26:25,166] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 32768.0, reducing to 16384.0
+  0%|          | 2/13145 [00:12<23:01:08,  6.31s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 36
+[2024-08-18 18:26:30,464] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 2
+[2024-08-18 18:26:30,464] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 16384.0 to 8192.0
+[2024-08-18 18:26:30,465] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 16384.0, reducing to 8192.0
+  0%|          | 3/13145 [00:18<21:19:33,  5.84s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 19
+[2024-08-18 18:26:35,575] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 3
+[2024-08-18 18:26:35,576] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 8192.0 to 4096.0
+[2024-08-18 18:26:35,576] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 8192.0, reducing to 4096.0
+  0%|          | 4/13145 [00:23<20:17:37,  5.56s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 60
+[2024-08-18 18:26:40,570] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 4
+[2024-08-18 18:26:40,570] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 4096.0 to 2048.0
+[2024-08-18 18:26:40,571] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 4096.0, reducing to 2048.0
+  0%|          | 5/13145 [00:28<19:31:16,  5.35s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 70
+[2024-08-18 18:26:45,797] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 5
+[2024-08-18 18:26:45,797] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 2048.0 to 1024.0
+[2024-08-18 18:26:45,798] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 2048.0, reducing to 1024.0
+  0%|          | 6/13145 [00:33<19:55:06,  5.46s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 54
+[2024-08-18 18:26:51,472] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 6
+[2024-08-18 18:26:51,472] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 1024.0 to 512.0
+[2024-08-18 18:26:51,473] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 1024.0, reducing to 512.0
+  0%|          | 7/13145 [00:39<19:42:41,  5.40s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 76
+[2024-08-18 18:26:57,001] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 7
+[2024-08-18 18:26:57,001] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 512.0 to 256.0
+[2024-08-18 18:26:57,002] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 512.0, reducing to 256.0
+  0%|          | 8/13145 [00:44<19:50:50,  5.44s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 36
+[2024-08-18 18:27:02,315] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 8
+[2024-08-18 18:27:02,315] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 256.0 to 128.0
+[2024-08-18 18:27:02,316] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 256.0, reducing to 128.0
+  0%|          | 9/13145 [00:50<19:59:20,  5.48s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 100
+[2024-08-18 18:27:07,845] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 9
+[2024-08-18 18:27:07,846] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 128.0 to 64.0
+[2024-08-18 18:27:07,846] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 128.0, reducing to 64.0
+  0%|          | 10/13145 [00:55<19:44:35,  5.41s/it]                                                     {'loss': 6.4906, 'learning_rate': 5e-05, 'epoch': 0.0}
+  0%|          | 10/13145 [00:55<19:44:35,  5.41s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 75
+[2024-08-18 18:27:13,163] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 10
+[2024-08-18 18:27:13,163] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 64.0 to 32.0
+[2024-08-18 18:27:13,163] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 64.0, reducing to 32.0
+  0%|          | 11/13145 [01:00<19:37:36,  5.38s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 61
+[2024-08-18 18:27:18,520] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 11
+[2024-08-18 18:27:18,520] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 32.0 to 16.0
+[2024-08-18 18:27:18,520] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 32.0, reducing to 16.0
+  0%|          | 12/13145 [01:06<19:36:44,  5.38s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 54
+[2024-08-18 18:27:23,739] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 12
+[2024-08-18 18:27:23,739] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 16.0 to 8.0
+[2024-08-18 18:27:23,740] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 16.0, reducing to 8.0
+  0%|          | 13/13145 [01:11<19:24:55,  5.32s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 70
+[2024-08-18 18:27:28,876] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 13
+[2024-08-18 18:27:28,876] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 8.0 to 4.0
+[2024-08-18 18:27:28,877] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 8.0, reducing to 4.0
+  0%|          | 14/13145 [01:16<19:11:56,  5.26s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 55
+[2024-08-18 18:27:34,056] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 14
+[2024-08-18 18:27:34,056] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 4.0 to 2.0
+[2024-08-18 18:27:34,057] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 4.0, reducing to 2.0
+  0%|          | 15/13145 [01:21<19:07:00,  5.24s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 80
+[2024-08-18 18:27:39,163] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 15
+[2024-08-18 18:27:39,164] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 2.0 to 1.0
+[2024-08-18 18:27:39,164] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 2.0, reducing to 1.0
+  0%|          | 16/13145 [01:26<19:04:02,  5.23s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 66
+[2024-08-18 18:27:44,336] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 16
+[2024-08-18 18:27:44,336] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 1.0 to 0.5
+[2024-08-18 18:27:44,336] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 1.0, reducing to 0.5
+  0%|          | 17/13145 [01:32<18:53:41,  5.18s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 70
+[2024-08-18 18:27:49,468] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 17
+[2024-08-18 18:27:49,468] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.5 to 0.25
+[2024-08-18 18:27:49,469] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.5, reducing to 0.25
+  0%|          | 18/13145 [01:37<18:50:17,  5.17s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 77
+[2024-08-18 18:27:54,705] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 18
+[2024-08-18 18:27:54,705] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:27:54,705] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 19/13145 [01:42<18:58:53,  5.21s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 68
+[2024-08-18 18:27:59,890] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 19
+[2024-08-18 18:27:59,891] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:27:59,891] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 20/13145 [01:47<18:53:27,  5.18s/it]                                                     {'loss': 6.562, 'learning_rate': 4.99961962723469e-05, 'epoch': 0.01}
+  0%|          | 20/13145 [01:47<18:53:27,  5.18s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 74
+[2024-08-18 18:28:05,031] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 20
+[2024-08-18 18:28:05,032] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:05,032] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 21/13145 [01:52<18:50:41,  5.17s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 77
+[2024-08-18 18:28:10,167] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 21
+[2024-08-18 18:28:10,167] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:10,167] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 22/13145 [01:57<18:48:24,  5.16s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 70
+[2024-08-18 18:28:15,316] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 22
+[2024-08-18 18:28:15,316] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:15,316] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 23/13145 [02:03<18:47:39,  5.16s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 69
+[2024-08-18 18:28:20,510] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 23
+[2024-08-18 18:28:20,510] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:20,510] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 24/13145 [02:08<18:50:01,  5.17s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 70
+[2024-08-18 18:28:25,715] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 24
+[2024-08-18 18:28:25,715] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:25,716] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 25/13145 [02:13<18:52:23,  5.18s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 70
+[2024-08-18 18:28:30,860] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 25
+[2024-08-18 18:28:30,860] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:30,860] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 26/13145 [02:18<18:50:09,  5.17s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 55
+[2024-08-18 18:28:36,077] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 26
+[2024-08-18 18:28:36,077] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:36,078] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 27/13145 [02:23<18:53:40,  5.19s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 57
+[2024-08-18 18:28:41,269] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 27
+[2024-08-18 18:28:41,269] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:41,269] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 28/13145 [02:28<18:53:24,  5.18s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 52
+[2024-08-18 18:28:46,393] [INFO] [unfused_optimizer.py:281:_update_scale] Grad overflow on iteration: 28
+[2024-08-18 18:28:46,393] [INFO] [unfused_optimizer.py:282:_update_scale] Reducing dynamic loss scale from 0.25 to 0.25
+[2024-08-18 18:28:46,394] [INFO] [replace_operation.py:279:step] [deepspeed] fp16 dynamic loss scale overflow! Skipping step. Attempted loss scale: 0.25, reducing to 0.25
+  0%|          | 29/13145 [02:34<18:51:13,  5.17s/it]Trainable parameters 6738.415616 peak_meory 28.495491981506348 utilization 85
+[2024-08-18 18:28:53,791] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: -9) local_rank: 0 (pid: 2923685) of binary: /mounts/work/lyk/anaconda3/envs/torch2/bin/python
+Traceback (most recent call last):
+  File "/mounts/work/lyk/anaconda3/envs/torch2/bin/torchrun", line 8, in <module>
+    sys.exit(main())
+  File "/mounts/work/lyk/anaconda3/envs/torch2/lib/python3.8/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/mounts/work/lyk/anaconda3/envs/torch2/lib/python3.8/site-packages/torch/distributed/run.py", line 806, in main
+    run(args)
+  File "/mounts/work/lyk/anaconda3/envs/torch2/lib/python3.8/site-packages/torch/distributed/run.py", line 797, in run
+    elastic_launch(
+  File "/mounts/work/lyk/anaconda3/envs/torch2/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/mounts/work/lyk/anaconda3/envs/torch2/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+========================================================
+examples/run_generation.py FAILED
+--------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+--------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2024-08-18_18:28:53
+  host      : rho2
+  rank      : 0 (local_rank: 0)
+  exitcode  : -9 (pid: 2923685)
+  error_file: <N/A>
+  traceback : Signal 9 (SIGKILL) received by PID 2923685
+========================================================
